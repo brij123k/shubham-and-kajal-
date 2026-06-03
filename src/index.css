@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 33% 96%;
+    --foreground: 0 10% 15%;
+
+    --card: 36 33% 96%;
+    --card-foreground: 0 10% 15%;
+
+    --popover: 36 33% 96%;
+    --popover-foreground: 0 10% 15%;
+
+    --primary: 0 55% 29%;
+    --primary-foreground: 36 33% 96%;
+
+    --secondary: 36 30% 90%;
+    --secondary-foreground: 0 10% 15%;
+
+    --muted: 36 20% 88%;
+    --muted-foreground: 0 5% 45%;
+
+    --accent: 38 60% 55%;
+    --accent-foreground: 0 10% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 36 20% 85%;
+    --input: 36 20% 85%;
+    --ring: 0 55% 29%;
+
+    --radius: 0.5rem;
+
+    /* Curtain colors */
+    --curtain: 0 55% 29%;
+    --curtain-dark: 0 55% 22%;
+    --curtain-light: 0 45% 38%;
+    --curtain-fold: 0 20% 85%;
+
+    /* Gold accent */
+    --gold: 38 60% 55%;
+    --gold-light: 38 50% 72%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer components {
+  .font-calligraphy {
+    font-family: 'Great Vibes', cursive;
+  }
+
+  .font-serif-elegant {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
