@@ -138,7 +138,7 @@ const TheaterCurtain = ({ isOpen = false, onOpen, currentPage = 0 }: TheaterCurt
       onClick={handleClick}
       style={{ height: '100vh', position: 'relative', backgroundColor: '#000' }}
     >
-      {/* Video */}
+      {/* ===== SECTION: VIDEO ===== */}
       {(phase === "closed" || phase === "opening") && !videoError && (
         <video
           ref={videoRef}
@@ -155,7 +155,7 @@ const TheaterCurtain = ({ isOpen = false, onOpen, currentPage = 0 }: TheaterCurt
         />
       )}
 
-      {/* Fallback image */}
+      {/* ===== SECTION: FALLBACK IMAGE ===== */}
       {(phase === "closed" || phase === "opening") && videoError && (
         <div
           className="absolute inset-0 w-full h-full"
@@ -168,7 +168,7 @@ const TheaterCurtain = ({ isOpen = false, onOpen, currentPage = 0 }: TheaterCurt
         />
       )}
 
-      {/* Open curtain image */}
+      {/* ===== SECTION: OPEN CURTAIN IMAGE ===== */}
       {phase === "open" && (
         <div
           className="absolute inset-0 w-full h-full"
@@ -183,29 +183,29 @@ const TheaterCurtain = ({ isOpen = false, onOpen, currentPage = 0 }: TheaterCurt
         />
       )}
 
-      {/* Tap to open */}
+      {/* ===== SECTION: TAP TO OPEN ===== */}
       {phase === "closed" && !isInitialLoad && (
-        <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-          <p
-            className="text-xs sm:text-sm md:text-base lg:text-lg tracking-widest uppercase animate-pulse px-4 text-center"
-            style={{
-              color: "(0,0,0)",
-              textShadow: "0 2px 10px rgba(0,0,0,0.8)",
-              fontFamily: "'Georgia', serif",
-              letterSpacing: '0.2em',
-            }}
-          >
-            Tap to open
-          </p>
-        </div>
+       <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+  <p
+    className="text-sm sm:text-base md:text-lg lg:text-xl tracking-widest uppercase animate-pulse px-4 text-center"
+    style={{
+      color: "rgb(114, 47, 55)",
+      textShadow: "0 2px 10px rgb(114, 47, 55)",
+      fontFamily: "'Georgia', serif",
+      letterSpacing: '0.2em',
+    }}
+  >
+    Tap to open
+  </p>
+</div>
       )}
 
-      {/* Loading state */}
+      {/* ===== SECTION: LOADING STATE ===== */}
       {phase === "closed" && isInitialLoad && (
         <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none" />
       )}
 
-      {/* Invitation Content */}
+      {/* ===== SECTION: INVITATION CONTENT ===== */}
       {showContent && (
         <motion.div
           className="absolute inset-0 z-50 flex items-center justify-center"
@@ -220,7 +220,8 @@ const TheaterCurtain = ({ isOpen = false, onOpen, currentPage = 0 }: TheaterCurt
           }}
         >
           <div className="flex flex-col items-center justify-center min-h-screen px-3 sm:px-6 md:px-8 py-2 sm:py-12 md:py-16 text-center w-full">
-            {/* Prayer text */}
+
+            {/* ===== SECTION: PRAYER TEXT ===== */}
             <motion.div
               className="mb-4 sm:mb-6 md:mb-8 lg:mb-10"
               initial={{ opacity: 0, y: 20 }}
@@ -231,29 +232,29 @@ const TheaterCurtain = ({ isOpen = false, onOpen, currentPage = 0 }: TheaterCurt
                 className="pt-44 font-serif-elegant text-[12px] xs:text-[9px] sm:text-[10px] md:text-xs lg:text-sm tracking-[0.2em] xs:tracking-[0.22em] sm:tracking-[0.25em] md:tracking-[0.3em] lg:tracking-[0.35em] text-gray-700 sm:text-muted-foreground leading-tight uppercase"
                 style={{ textShadow: "0 2px 8px rgba(255,255,255,0.8), 0 2px 12px rgba(0,0,0,0.5)" }}
               >
-                THIS IS WHERE
+                To Love, Laughter & 
               </p>
               <p
                 className="font-serif-elegant text-[12px] xs:text-[9px] sm:text-[10px] md:text-xs lg:text-sm tracking-[0.2em] xs:tracking-[0.22em] sm:tracking-[0.25em] md:tracking-[0.3em] lg:tracking-[0.35em] text-gray-700 sm:text-muted-foreground leading-tight uppercase"
                 style={{ textShadow: "0 2px 8px rgba(255,255,255,0.8), 0 2px 12px rgba(0,0,0,0.5)" }}
               >
-                OUR FOREVER BEGINS.
+                Happily ever after!
               </p>
             </motion.div>
 
-            {/* Names section */}
+            {/* ===== SECTION: NAMES (KAJAL & SUBHAM) ===== */}
             <motion.div
               className="flex flex-col items-center justify-center gap-0 w-full max-w-4xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={showContent ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 1.1 }}
             >
-              {/* ✅ KAJAL — lineHeight: 19px mobile / 44px desktop */}
+              {/* ----- Name: KAJAL ----- */}
               <motion.h1
                 className="text-[24px] xs:text-[20px] sm:text-[24px] md:text-[32px] lg:text-[42px] xl:text-[52px] 2xl:text-[62px] leading-tight md:leading-normal lg:leading-relaxed break-words max-w-full px-2 whitespace-nowrap md:whitespace-normal"
                 style={{
                   fontFamily: "'Playfair Display', 'Cormorant Garamond', 'Libre Baskerville', serif",
-                  color: '#2d2d2d',
+                  color: '#D4AF37',
                   fontWeight: 400,
                   letterSpacing: '0.03em',
                   lineHeight: nameLineHeight,
@@ -266,7 +267,7 @@ const TheaterCurtain = ({ isOpen = false, onOpen, currentPage = 0 }: TheaterCurt
                 KAJAL
               </motion.h1>
 
-              {/* "and" image */}
+              {/* ----- "and" image ----- */}
               <motion.div
                 className="flex-shrink-0 relative z-10 -mb-2 xs:-mb-3 sm:-mb-4 md:-mb-6 lg:-mb-8 xl:-mb-10"
                 style={{ paddingLeft: '19px' }}
@@ -286,12 +287,12 @@ const TheaterCurtain = ({ isOpen = false, onOpen, currentPage = 0 }: TheaterCurt
                 />
               </motion.div>
 
-              {/* ✅ SUBHAM — lineHeight: 19px mobile / 44px desktop */}
+              {/* ----- Name: SUBHAM ----- */}
               <motion.h1
                 className="text-[24px] xs:text-[20px] sm:text-[24px] md:text-[32px] lg:text-[42px] xl:text-[52px] 2xl:text-[62px] leading-tight md:leading-normal lg:leading-relaxed break-words max-w-full px-2 whitespace-nowrap md:whitespace-normal"
                 style={{
                   fontFamily: "'Playfair Display', 'Cormorant Garamond', 'Libre Baskerville', serif",
-                  color: '#2d2d2d',
+                  color: '#D4AF37',
                   fontWeight: 400,
                   letterSpacing: '0.03em',
                   lineHeight: nameLineHeight,
@@ -305,7 +306,7 @@ const TheaterCurtain = ({ isOpen = false, onOpen, currentPage = 0 }: TheaterCurt
               </motion.h1>
             </motion.div>
 
-            {/* Save the Date */}
+            {/* ===== SECTION: SAVE THE DATE (SPACER) ===== */}
             <motion.div
               className="mt-4 xs:mt-5 sm:mt-6 md:mt-8 lg:mt-10 xl:mt-12"
               initial={{ opacity: 0, y: 20 }}
@@ -314,60 +315,60 @@ const TheaterCurtain = ({ isOpen = false, onOpen, currentPage = 0 }: TheaterCurt
             >
               {/* Empty */}
             </motion.div>
-
-            {/* Scroll Down Indicator */}
-            <motion.div
-              className="flex flex-col items-center pointer-events-none"
-              initial={{ opacity: 0 }}
-              animate={showContent ? { opacity: 1 } : {}}
-              transition={{ duration: 0.8, delay: 2.5 }}
-              style={{ marginTop: '8px' }}
-            >
-              <span
-                style={{
-                  color: '#C9A86A',
-                  fontFamily: "'Playfair Display', 'Cormorant Garamond', serif",
-                  fontSize: '10px',
-                  letterSpacing: '0.15em',
-                  textTransform: 'uppercase',
-                  opacity: 0.85,
-                  textShadow: '0 2px 8px rgba(0,0,0,0.5)',
-                }}
-              >
-                Scroll
-              </span>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', marginTop: '4px' }}>
-                {[0, 1, 2].map((i) => (
-                  <svg
-                    key={i}
-                    width="16"
-                    height="10"
-                    viewBox="0 0 16 10"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    style={{
-                      animation: 'scrollBounce 1.5s ease-in-out infinite',
-                      animationDelay: `${i * 0.2}s`,
-                      opacity: 0,
-                      filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.5))',
-                    }}
-                  >
-                    <path
-                      d="M1 1L8 8L15 1"
-                      stroke="#C9A86A"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                ))}
-              </div>
-            </motion.div>
           </div>
+
+          {/* ===== SECTION: SCROLL INDICATOR (pinned bottom-center) ===== */}
+          <motion.div
+            className="flex flex-col items-center pointer-events-none"
+            initial={{ opacity: 0 }}
+            animate={showContent ? { opacity: 1 } : {}}
+            transition={{ duration: 0.8, delay: 2.5 }}
+            style={{ position: 'absolute', bottom: '6vh', left: 0, right: 0 }}
+          >
+            <span
+              style={{
+                color: '#C9A86A',
+                fontFamily: "'Playfair Display', 'Cormorant Garamond', serif",
+                fontSize: '10px',
+                letterSpacing: '0.15em',
+                textTransform: 'uppercase',
+                opacity: 0.85,
+                textShadow: '0 2px 8px rgba(0,0,0,0.5)',
+              }}
+            >
+              Scroll
+            </span>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', marginTop: '4px' }}>
+              {[0, 1, 2].map((i) => (
+                <svg
+                  key={i}
+                  width="16"
+                  height="10"
+                  viewBox="0 0 16 10"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style={{
+                    animation: 'scrollBounce 1.5s ease-in-out infinite',
+                    animationDelay: `${i * 0.2}s`,
+                    opacity: 0,
+                    filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.5))',
+                  }}
+                >
+                  <path
+                    d="M1 1L8 8L15 1"
+                    stroke="#C9A86A"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              ))}
+            </div>
+          </motion.div>
         </motion.div>
       )}
 
-      {/* Scroll bounce keyframe */}
+      {/* ===== SECTION: SCROLL BOUNCE KEYFRAME ===== */}
       <style>{`
         @keyframes scrollBounce {
           0%   { opacity: 0; transform: translateY(-4px); }
@@ -376,7 +377,7 @@ const TheaterCurtain = ({ isOpen = false, onOpen, currentPage = 0 }: TheaterCurt
         }
       `}</style>
 
-      {/* Confetti */}
+      {/* ===== SECTION: CONFETTI ===== */}
       {showConfetti && (
         <div className="fixed inset-0 z-40 pointer-events-none overflow-hidden">
           {confetti.map((piece) => {
